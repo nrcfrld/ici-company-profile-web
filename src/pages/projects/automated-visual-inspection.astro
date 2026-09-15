@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Button from '../../components/Button.astro';
+import Icon from '../../components/Icon.astro';
+
+const results = [
+  ['62%', 'faster inspection cycle'],
+  ['98.7%', 'detection accuracy'],
+  ['70%', 'lower manual workload'],
+  ['Live', 'production data'],
+];
+
+const system = [
+  ['Camera', 'Captures every component at line speed'],
+  ['Edge computer', 'Processes vision models near the line'],
+  ['PLC', 'Coordinates reject logic and machine states'],
+  ['Production API', 'Structures inspection and traceability data'],
+  ['Dashboard', 'Makes quality and output visible in real time'],
+];
+---
+
+<BaseLayout
+  title="Automated Visual Inspection — ICI Industrial Systems"
+  description="How ICI delivered a machine vision inspection system with 98.7% detection accuracy and a 70% reduction in manual inspection workload."
+>
+  <main class="w-full max-w-full overflow-x-hidden">
+    <section class="grain blueprint-grid relative min-h-[900px] overflow-hidden bg-[#11130f] text-white lg:min-h-screen">
+      <Nav />
+      <div class="absolute right-[-12rem] top-[-10rem] size-[42rem] rounded-full bg-[#dfff00]/12 blur-[150px]"></div>
+      <div class="container-shell relative z-10 flex min-h-[900px] flex-col justify-center pb-20 pt-36 lg:min-h-screen">
+        <a href="/#projects" class="link-arrow mb-10 inline-flex w-fit items-center gap-3 text-sm font-bold text-white/60 hover:text-[#dfff00]"><span class="rotate-[-135deg]"><Icon name="arrow" /></span> Back to selected projects</a>
+        <p class="project-kicker eyebrow mb-8 text-[#dfff00]">Automotive component manufacturer</p>
+        <h1 class="project-title display max-w-6xl text-balance">Inspection at line speed. Accuracy without compromise.</h1>
+        <div class="mt-10 grid max-w-6xl gap-8 border-t border-white/25 pt-7 lg:grid-cols-[1fr_0.55fr]">
+          <p class="project-intro max-w-3xl text-xl leading-relaxed text-white/70 md:text-2xl">A machine vision system that reduced dependence on manual quality inspection while fitting into an eight-hour installation window.</p>
+          <dl class="grid grid-cols-2 gap-x-8 gap-y-5 text-sm">
+            <div><dt class="text-white/45">Capability</dt><dd class="mt-1 font-bold">Machine Vision</dd></div>
+            <div><dt class="text-white/45">Environment</dt><dd class="mt-1 font-bold">Live production line</dd></div>
+            <div><dt class="text-white/45">Integration</dt><dd class="mt-1 font-bold">PLC + API</dd></div>
+            <div><dt class="text-white/45">Install limit</dt><dd class="mt-1 font-bold">8 hours</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative bg-[#f1efe8] py-32 md:py-48">
+      <div class="container-shell grid gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+        <div>
+          <p class="eyebrow mb-7 text-[#f3592a]">The production constraint</p>
+          <h2 class="section-title max-w-xl text-balance">Fourteen operators. Every shift.</h2>
+        </div>
+        <div>
+          <p class="max-w-3xl text-3xl font-medium leading-tight tracking-[-0.035em] md:text-5xl">Manual inspection consumed significant labour, limited the speed of quality decisions, and left production data fragmented.</p>
+          <div class="mt-14 grid gap-px border border-black/20 bg-black/20 sm:grid-cols-2">
+            <div class="bg-[#e7e5dd] p-7 md:p-9"><p class="text-sm font-bold text-[#f3592a]">Operational risk</p><p class="mt-4 text-lg text-black/60">Quality performance relied on repeatable visual judgement across long shifts.</p></div>
+            <div class="bg-[#e7e5dd] p-7 md:p-9"><p class="text-sm font-bold text-[#f3592a]">Delivery risk</p><p class="mt-4 text-lg text-black/60">The line could not be stopped for more than eight hours during installation.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden bg-[#dfff00]">
+      <div class="container-shell grid grid-cols-2 border-x border-black/20 lg:grid-cols-4">
+        {results.map(([value, label], index) => (
+          <div class:list={['result-cell min-h-48 p-6 md:min-h-64 md:p-9', index % 2 !== 0 ? 'border-l border-black/20' : '', index > 1 ? 'border-t border-black/20 lg:border-t-0' : '', index > 0 ? 'lg:border-l lg:border-black/20' : '']}>
+            <strong class="block text-5xl font-medium tracking-[-0.065em] md:text-7xl">{value}</strong>
+            <span class="mt-3 block max-w-[12rem] text-sm font-bold">{label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#11130f] py-32 text-white md:py-48">
+      <div class="container-shell">
+        <div class="mb-16 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <div>
+            <p class="eyebrow mb-7 text-[#dfff00]">The integrated solution</p>
+            <h2 class="section-title max-w-xl">One decision chain, from image to action.</h2>
+          </div>
+          <p class="max-w-3xl text-2xl leading-relaxed text-white/60 md:text-3xl">ICI engineered the imaging, local computation, line controls, production interface, and visualization as a single traceable system.</p>
+        </div>
+
+        <div class="solution-image group relative h-[70vh] min-h-[34rem] overflow-hidden border border-white/20">
+          <img src="https://unsplash.com/photos/jHZ70nRk7Ns/download?force=true&w=1800" alt="Industrial robot and inspection equipment inside an automated production cell" class="h-full w-full object-cover grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#11130f] via-transparent to-[#11130f]/25"></div>
+          <div class="absolute bottom-0 left-0 max-w-xl border-r border-t border-white/20 bg-[#11130f]/85 p-6 backdrop-blur-md md:p-9">
+            <p class="text-sm font-bold text-[#dfff00]">Engineering principle</p>
+            <p class="mt-3 text-xl leading-relaxed">Keep the inspection decision close to the line. Move structured evidence upward for analysis and traceability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#e7e5dd] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+          <div class="system-pin h-fit lg:sticky lg:top-28">
+            <p class="eyebrow mb-7 text-[#f3592a]">System architecture</p>
+            <h2 class="section-title max-w-lg">A clear path from signal to insight.</h2>
+          </div>
+          <div class="relative border-t border-black/25">
+            {system.map(([name, detail], index) => (
+              <article class="system-node group grid min-h-44 gap-5 border-b border-black/25 py-8 md:grid-cols-[auto_0.55fr_1fr] md:items-center">
+                <span class="grid size-11 place-items-center border border-black/25 text-sm font-bold text-[#f3592a]">0{index + 1}</span>
+                <h3 class="text-3xl font-medium tracking-[-0.04em] md:text-4xl">{name}</h3>
+                <div class="flex items-center justify-between gap-5"><p class="max-w-md text-lg text-black/60">{detail}</p>{index < system.length - 1 && <span class="hidden rotate-[135deg] text-[#f3592a] md:block"><Icon name="arrow" /></span>}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grain bg-[#f3592a] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div>
+            <p class="eyebrow mb-7">Installation strategy</p>
+            <h2 class="section-title max-w-4xl text-balance">Designing the changeover before touching the line.</h2>
+          </div>
+          <p class="text-xl leading-relaxed text-black/65">The eight-hour shutdown limit shaped the system architecture, off-line build, interface testing, installation sequence, and fallback plan from the beginning.</p>
+        </div>
+
+        <div class="mt-20 grid gap-px border border-black/20 bg-black/20 md:grid-cols-4">
+          {[
+            ['Off-line build', 'Assembly and logic preparation away from the production asset.'],
+            ['Interface simulation', 'PLC and API handshakes tested before the installation window.'],
+            ['Sequenced changeover', 'Every task, owner, dependency, and checkpoint planned to the minute.'],
+            ['Controlled ramp-up', 'Verification and production release against agreed acceptance criteria.'],
+          ].map(([title, body]) => (
+            <article class="bg-[#f3592a] p-7 md:min-h-72 md:p-9"><Icon name="check" class="size-7" /><h3 class="mt-16 text-2xl font-bold tracking-[-0.03em]">{title}</h3><p class="mt-4 text-black/60">{body}</p></article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#f1efe8] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="grid gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <div>
+            <p class="eyebrow mb-7 text-[#f3592a]">The operational result</p>
+            <h2 class="section-title max-w-xl">Quality data became production data.</h2>
+          </div>
+          <div>
+            <p class="scrub-text max-w-4xl text-3xl font-medium leading-tight tracking-[-0.04em] md:text-5xl">
+              {`Inspection moved from a labour-heavy checkpoint to a connected production capability—faster, measurable, and visible in real time.`.split(' ').map((word) => <span class="scrub-word inline-block">{word}&nbsp;</span>)}
+            </p>
+            <div class="mt-16 border-t border-black/25 pt-8">
+              <p class="max-w-2xl text-lg text-black/60">The system reduced manual inspection workload by 70% while achieving 98.7% detection accuracy. It also created a live data foundation for production and quality teams to identify patterns, trace outcomes, and improve the process over time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden bg-[#11130f] py-8 text-white" aria-label="Project system flow">
+      <div class="marquee-track flex w-max whitespace-nowrap text-2xl font-bold uppercase tracking-[-0.02em] md:text-4xl">
+        {[0, 1].map(() => (
+          <div class="flex shrink-0 items-center">
+            {['Camera', 'Edge Computer', 'PLC', 'Production API', 'Dashboard'].map((item) => (
+              <><span class="mx-7">{item}</span><span class="text-[#dfff00]">→</span></>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#dfff00] py-24 md:py-32">
+      <div class="container-shell flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
+        <div><p class="eyebrow mb-7">Have a similar constraint?</p><h2 class="max-w-4xl text-5xl font-medium leading-[0.95] tracking-[-0.055em] md:text-7xl">Let’s test the engineering case.</h2></div>
+        <Button href="mailto:engineering@ici-industrial.co.id?subject=Engineering%20Consultation%20—%20Machine%20Vision" variant="dark">Discuss your production challenge</Button>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+
+  <script>
+    import gsap from 'gsap';
+    import ScrollTrigger from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      gsap.timeline({ defaults: { ease: 'power4.out' } })
+        .from('.project-kicker', { opacity: 0, y: 20, duration: 0.6 })
+        .from('.project-title', { opacity: 0, y: 70, duration: 1.15 }, '-=0.25')
+        .from('.project-intro, .project-intro + dl', { opacity: 0, y: 28, stagger: 0.12, duration: 0.8 }, '-=0.65');
+
+      gsap.utils.toArray<HTMLElement>('.result-cell').forEach((cell, index) => {
+        gsap.from(cell, { y: 48, opacity: 0, delay: index * 0.08, duration: 0.8, scrollTrigger: { trigger: cell, start: 'top 88%' } });
+      });
+
+      gsap.fromTo('.solution-image', { scale: 0.9, opacity: 0.3 }, {
+        scale: 1,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: { trigger: '.solution-image', start: 'top bottom', end: 'center center', scrub: true },
+      });
+
+      gsap.utils.toArray<HTMLElement>('.system-node').forEach((node) => {
+        gsap.from(node.children, { x: 35, opacity: 0, stagger: 0.08, duration: 0.75, scrollTrigger: { trigger: node, start: 'top 82%' } });
+      });
+
+      gsap.to('.scrub-word', {
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'none',
+        scrollTrigger: { trigger: '.scrub-text', start: 'top 78%', end: 'bottom 38%', scrub: true },
+      });
+
+      document.querySelectorAll<HTMLElement>('.magnetic').forEach((element) => {
+        element.addEventListener('pointermove', (event) => {
+          const rect = element.getBoundingClientRect();
+          gsap.to(element, { x: (event.clientX - rect.left - rect.width / 2) * 0.12, y: (event.clientY - rect.top - rect.height / 2) * 0.12, duration: 0.35 });
+        });
+        element.addEventListener('pointerleave', () => gsap.to(element, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.35)' }));
+      });
+    }
+  </script>
+</BaseLayout>

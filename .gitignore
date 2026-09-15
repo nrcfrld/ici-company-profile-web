@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+outputs/
+tmp/
+work/
+.DS_Store
+*.log
+

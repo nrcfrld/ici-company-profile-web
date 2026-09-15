@@ -1,0 +1,69 @@
+---
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  dark?: boolean;
+}
+
+const { dark = true } = Astro.props;
+const home = Astro.url.pathname === '/';
+const prefix = home ? '' : '/';
+---
+
+<header class:list={['absolute inset-x-0 top-0 z-50', dark ? 'text-white' : 'text-[#11130f]']}>
+  <div class="container-shell flex h-24 items-center justify-between border-b border-current/20">
+    <a href="/" class="group flex items-center gap-3" aria-label="ICI Industrial Systems home">
+      <span class:list={['grid size-10 place-items-center border text-sm font-extrabold transition-colors', dark ? 'border-white/50 group-hover:bg-[#dfff00] group-hover:text-[#11130f]' : 'border-black/40 group-hover:bg-[#11130f] group-hover:text-white']}>ICI</span>
+      <span class="hidden text-xs font-bold uppercase leading-tight tracking-[0.16em] sm:block">Industrial<br />Systems</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 text-sm font-semibold lg:flex" aria-label="Primary navigation">
+      <a class="transition-opacity hover:opacity-55" href={`${prefix}#services`}>Capabilities</a>
+      <a class="transition-opacity hover:opacity-55" href={`${prefix}#projects`}>Projects</a>
+      <a class="transition-opacity hover:opacity-55" href={`${prefix}#process`}>Process</a>
+      <a class="transition-opacity hover:opacity-55" href={`${prefix}#company`}>Company</a>
+    </nav>
+
+    <div class="hidden items-center gap-3 sm:flex">
+      <a class="hidden text-xs font-bold uppercase tracking-[0.14em] transition-opacity hover:opacity-55 xl:block" href="/downloads/ici-industrial-systems-company-profile.pdf" download>Company profile</a>
+      <Button href={`${prefix}#consultation`} variant={dark ? 'acid' : 'dark'} class="!min-h-11 !px-5">Start a conversation</Button>
+    </div>
+
+    <button id="menu-open" class="grid size-11 place-items-center border border-current/30 sm:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation">
+      <Icon name="menu" />
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-[#11130f] p-5 text-white" aria-hidden="true">
+    <div class="flex items-center justify-between border-b border-white/20 pb-5">
+      <span class="text-sm font-extrabold tracking-[0.16em]">ICI INDUSTRIAL SYSTEMS</span>
+      <button id="menu-close" class="grid size-11 place-items-center border border-white/30" aria-label="Close navigation"><Icon name="close" /></button>
+    </div>
+    <nav class="flex min-h-[70vh] flex-col justify-center gap-5" aria-label="Mobile navigation">
+      <a class="mobile-link text-5xl font-medium tracking-[-0.05em]" href={`${prefix}#services`}>Capabilities</a>
+      <a class="mobile-link text-5xl font-medium tracking-[-0.05em]" href={`${prefix}#projects`}>Projects</a>
+      <a class="mobile-link text-5xl font-medium tracking-[-0.05em]" href={`${prefix}#process`}>Process</a>
+      <a class="mobile-link text-5xl font-medium tracking-[-0.05em]" href={`${prefix}#company`}>Company</a>
+    </nav>
+    <Button href={`${prefix}#consultation`} variant="acid" class="w-full">Request engineering consultation</Button>
+  </div>
+</header>
+
+<script>
+  const open = document.querySelector<HTMLButtonElement>('#menu-open');
+  const close = document.querySelector<HTMLButtonElement>('#menu-close');
+  const menu = document.querySelector<HTMLElement>('#mobile-menu');
+  const links = document.querySelectorAll<HTMLAnchorElement>('.mobile-link');
+
+  const setMenu = (visible: boolean) => {
+    menu?.classList.toggle('hidden', !visible);
+    menu?.setAttribute('aria-hidden', String(!visible));
+    open?.setAttribute('aria-expanded', String(visible));
+    document.body.style.overflow = visible ? 'hidden' : '';
+  };
+
+  open?.addEventListener('click', () => setMenu(true));
+  close?.addEventListener('click', () => setMenu(false));
+  links.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+</script>

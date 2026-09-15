@@ -1,0 +1,452 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  {
+    title: 'Automation architecture',
+    body: 'Control systems designed around the production target—not a catalogue. PLC, SCADA, safety, motion, and data layers engineered as one operating system.',
+    detail: 'PLC & SCADA · Line control · Safety systems',
+    class: 'md:col-span-7',
+    image: 'https://unsplash.com/photos/kE0JmtbvXxM/download?force=true&w=1600',
+  },
+  {
+    title: 'Robotics & machine vision',
+    body: 'Repeatable handling, inspection, and traceability where manual processes create bottlenecks or quality variation.',
+    detail: 'Robot cells · Vision inspection · Traceability',
+    class: 'md:col-span-5',
+    image: 'https://unsplash.com/photos/sz1CHL7Pky0/download?force=true&w=1400',
+  },
+  {
+    title: 'Industrial IoT',
+    body: 'Live production signals translated into dashboards, alerts, and evidence for faster decisions.',
+    detail: 'OEE · Downtime · Energy',
+    class: 'md:col-span-4',
+  },
+  {
+    title: 'Manufacturing software',
+    body: 'Purpose-built applications that connect production, quality, maintenance, and management workflows.',
+    detail: 'APIs · Dashboards · MES extensions',
+    class: 'md:col-span-4',
+  },
+  {
+    title: 'Lifecycle support',
+    body: 'Preventive maintenance, optimization, and engineering response that protect the system after go-live.',
+    detail: 'PM plans · Retrofit · Support',
+    class: 'md:col-span-4',
+  },
+];
+
+const industries = [
+  ['Automotive', 'Precision, traceability, takt-time control'],
+  ['FMCG', 'Throughput, OEE, packaging reliability'],
+  ['Pharmaceutical', 'Validated processes and data integrity'],
+  ['Electronics', 'Inspection, handling, serial traceability'],
+  ['Packaging', 'Downtime visibility and line synchronization'],
+  ['Consumer goods', 'Flexible automation for changing demand'],
+];
+
+const process = [
+  ['Discovery', 'We map the production goal, constraints, interfaces, risks, and acceptance criteria on site.'],
+  ['Engineering', 'Controls, mechanics, software, and documentation are designed as one coordinated system.'],
+  ['Implementation', 'Build, FAT, installation, commissioning, and operator training follow a controlled plan.'],
+  ['Optimization', 'Performance is verified against the baseline, then tuned and maintained over its lifecycle.'],
+];
+
+const narrative = 'ICI works between the production target and the technical detail. That means we challenge assumptions early, engineer around live-site constraints, and remain accountable after commissioning—so a system does more than run on handover day.';
+---
+
+<BaseLayout
+  title="ICI Industrial Systems — Industrial Automation & Engineering"
+  description="Engineering partner for industrial automation, robotics, machine vision, IoT monitoring, and manufacturing software—from system design through maintenance."
+>
+  <main class="w-full max-w-full overflow-x-hidden">
+    <section class="grain blueprint-grid relative min-h-[900px] overflow-hidden bg-[#11130f] text-white lg:min-h-[100dvh]">
+      <Nav />
+
+      <div class="pointer-events-none absolute left-[-16rem] top-[-20rem] size-[50rem] rounded-full bg-[#f3592a]/20 blur-[160px]"></div>
+      <div class="pointer-events-none absolute bottom-[-18rem] left-[36%] size-[36rem] rounded-full bg-[#dfff00]/8 blur-[150px]"></div>
+
+      <div class="container-shell relative z-10 pt-24">
+        <div class="grid min-h-[calc(100dvh-6rem)] border-x border-white/15 lg:grid-cols-12">
+          <div class="relative flex flex-col justify-between border-b border-white/15 px-5 pb-10 pt-16 sm:px-9 lg:col-span-7 lg:border-b-0 lg:border-r lg:px-12 lg:pb-12 lg:pt-24 xl:px-16">
+            <div>
+              <p class="hero-kicker eyebrow mb-10 text-[#dfff00]">Engineering for production that cannot stand still</p>
+              <h1 class="hero-line max-w-6xl text-[clamp(3.4rem,6.3vw,7.25rem)] font-medium leading-[0.88] tracking-[-0.065em] text-balance">
+                Engineering certainty into every shift.
+              </h1>
+            </div>
+
+            <div class="hero-actions mt-16 border-t border-white/25 pt-7 lg:mt-24">
+              <div class="grid gap-8 xl:grid-cols-[1fr_auto] xl:items-end">
+                <p class="hero-copy max-w-2xl text-lg leading-relaxed text-white/65 md:text-xl">
+                  ICI takes responsibility from system design through implementation and maintenance—helping manufacturers reduce manual work, see production clearly, and operate with greater reliability.
+                </p>
+                <div class="flex flex-col gap-3 sm:flex-row xl:flex-col">
+                  <Button href="#consultation" variant="acid">Request engineering consultation</Button>
+                  <Button href="/downloads/ici-industrial-systems-company-profile.pdf" variant="outline" icon="download">Download company profile</Button>
+                </div>
+              </div>
+
+              <div class="hero-proof mt-10 grid gap-px bg-white/15 sm:grid-cols-3">
+                {[
+                  ['01', 'Reduce manual dependency'],
+                  ['02', 'Improve production visibility'],
+                  ['03', 'Strengthen operational reliability'],
+                ].map(([number, statement]) => (
+                  <div class="bg-[#11130f]/80 px-4 py-5 backdrop-blur-sm">
+                    <span class="text-xs font-bold text-[#f3592a]">{number}</span>
+                    <p class="mt-2 max-w-[12rem] text-sm font-semibold leading-snug text-white/75">{statement}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image group relative min-h-[34rem] overflow-hidden lg:col-span-5 lg:min-h-full">
+            <img
+              src="https://unsplash.com/photos/8gr6bObQLOI/download?force=true&w=1800"
+              alt="Industrial robots operating on a precision manufacturing line"
+              class="absolute inset-0 h-full w-full object-cover grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-[#11130f]/20 via-transparent to-[#11130f]/90"></div>
+            <div class="absolute inset-y-0 left-0 w-px bg-[#dfff00]/60"></div>
+
+            <div class="absolute right-0 top-0 flex h-full w-12 items-center justify-center border-l border-white/20 bg-[#11130f]/45 backdrop-blur-sm sm:w-14">
+              <p class="whitespace-nowrap text-[0.65rem] font-bold uppercase tracking-[0.22em] text-white/60 [writing-mode:vertical-rl]">Design · Integrate · Maintain</p>
+            </div>
+
+            <div class="absolute bottom-0 left-0 right-12 border-t border-white/25 bg-[#11130f]/82 p-6 backdrop-blur-md sm:right-14 md:p-8">
+              <div class="flex items-end justify-between gap-8">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#dfff00]">Cikarang engineering base</p>
+                  <p class="mt-2 max-w-xs text-xl font-medium tracking-[-0.02em]">Built near the plants we help keep moving.</p>
+                </div>
+                <span class="hidden size-12 shrink-0 items-center justify-center border border-white/30 text-[#dfff00] sm:flex"><Icon name="arrow" /></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Company credentials" class="bg-[#dfff00]">
+      <div class="container-shell grid grid-cols-2 border-x border-black/20 lg:grid-cols-4">
+        {[
+          ['120+', 'Projects delivered'],
+          ['35+', 'Industrial clients'],
+          ['8+', 'Years in operation'],
+          ['12', 'Engineering specialists'],
+        ].map(([value, label], index) => (
+          <div class:list={['metric-cell px-5 py-10 md:px-8 md:py-14', index % 2 !== 0 ? 'border-l border-black/20' : '', index > 1 ? 'border-t border-black/20 lg:border-t-0' : '', index > 0 ? 'lg:border-l lg:border-black/20' : '']}>
+            <strong class="block text-5xl font-medium tracking-[-0.06em] md:text-7xl">{value}</strong>
+            <span class="mt-2 block text-sm font-bold">{label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="services" class="bg-[#f1efe8] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="mb-16 grid items-end gap-8 md:grid-cols-[1fr_0.55fr] md:gap-16">
+          <div>
+            <p class="eyebrow mb-7 text-[#f3592a]">Integrated capability</p>
+            <h2 class="section-title max-w-5xl text-balance">One engineering team across the whole system.</h2>
+          </div>
+          <p class="max-w-xl text-lg leading-relaxed text-black/60">From sensor and control layer to operator interface, enterprise data, and lifecycle support. Fewer handoffs. Clearer ownership.</p>
+        </div>
+
+        <div class="grid grid-flow-dense grid-cols-1 border-l border-t border-black/20 md:grid-cols-12">
+          {services.map((service, index) => (
+            <article class:list={['service-card group relative min-h-[24rem] overflow-hidden border-b border-r border-black/20 p-7 md:p-9', service.class, index < 2 ? 'md:min-h-[32rem]' : 'md:min-h-[24rem]', index === 0 ? 'bg-[#11130f] text-white' : 'bg-[#e7e5dd]']}>
+              {service.image && (
+                <>
+                  <img src={service.image} alt="" class="absolute inset-0 h-full w-full object-cover grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+                  <div class:list={['absolute inset-0', index === 0 ? 'bg-gradient-to-r from-[#11130f] via-[#11130f]/85 to-[#11130f]/30' : 'bg-gradient-to-t from-[#11130f]/90 via-[#11130f]/45 to-transparent']} />
+                </>
+              )}
+              <div class="relative z-10 flex h-full flex-col justify-between">
+                <div class="flex items-start justify-between">
+                  <span class:list={['grid size-11 place-items-center border text-sm font-bold', index === 0 || service.image ? 'border-white/35 text-white' : 'border-black/25']}>{String(index + 1).padStart(2, '0')}</span>
+                  <Icon name="plus" class:list={['size-6 transition-transform duration-500 group-hover:rotate-90', index === 0 || service.image ? 'text-[#dfff00]' : 'text-[#f3592a]']} />
+                </div>
+                <div class:list={[service.image && index !== 0 ? 'text-white' : '']}>
+                  <h3 class="max-w-xl text-3xl font-medium tracking-[-0.04em] md:text-5xl">{service.title}</h3>
+                  <p class:list={['mt-5 max-w-xl text-base leading-relaxed', index === 0 || service.image ? 'text-white/70' : 'text-black/60']}>{service.body}</p>
+                  <p class:list={['mt-7 border-t pt-4 text-xs font-bold uppercase tracking-[0.12em]', index === 0 || service.image ? 'border-white/25 text-white/55' : 'border-black/20 text-black/55']}>{service.detail}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="relative bg-[#11130f] py-32 text-white md:py-48">
+      <div class="container-shell">
+        <div class="mb-20 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow mb-7 text-[#dfff00]">Proven under real constraints</p>
+            <h2 class="section-title max-w-4xl text-balance">Engineering measured in operational impact.</h2>
+          </div>
+          <p class="max-w-md text-lg text-white/55">Two production problems. Two integrated systems. Clear movement in the metrics that matter.</p>
+        </div>
+
+        <div class="project-stack space-y-10">
+          <article class="project-stack-card group overflow-hidden border border-white/20 bg-[#1b1d18] lg:sticky lg:top-10">
+            <div class="grid min-h-[720px] lg:grid-cols-[0.9fr_1.1fr]">
+              <div class="flex flex-col justify-between p-7 md:p-12">
+                <div>
+                  <p class="eyebrow text-[#dfff00]">Automotive component manufacturer</p>
+                  <h3 class="mt-8 max-w-xl text-5xl font-medium leading-[0.95] tracking-[-0.055em] md:text-7xl">Automated visual inspection</h3>
+                  <p class="mt-7 max-w-lg text-lg leading-relaxed text-white/60">A machine vision system replaced a 14-operator inspection process without exceeding the line’s eight-hour installation window.</p>
+                </div>
+                <a href="/projects/automated-visual-inspection" class="link-arrow mt-12 inline-flex items-center gap-4 font-bold text-[#dfff00]">Explore the project <Icon name="arrow" /></a>
+              </div>
+              <div class="relative min-h-[32rem] overflow-hidden">
+                <img src="https://unsplash.com/photos/jHZ70nRk7Ns/download?force=true&w=1600" alt="Industrial robot working inside an automated production cell" class="h-full w-full object-cover grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#11130f] via-transparent to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 grid grid-cols-2 border-t border-white/25 bg-[#11130f]/80 backdrop-blur-md sm:grid-cols-4">
+                  {[['62%', 'Faster inspection'], ['98.7%', 'Detection accuracy'], ['70%', 'Less manual work'], ['Live', 'Production data']].map(([value, label], index) => (
+                    <div class:list={['p-5 md:p-6', index > 0 ? 'border-l border-white/20' : '', index > 1 ? 'border-t border-white/20 sm:border-t-0' : '']}>
+                      <strong class="block text-3xl tracking-[-0.04em] text-[#dfff00]">{value}</strong>
+                      <span class="mt-1 block text-xs text-white/60">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-stack-card group overflow-hidden border border-black/20 bg-[#dfff00] text-[#11130f] lg:sticky lg:top-14">
+            <div class="grid min-h-[650px] lg:grid-cols-[1.1fr_0.9fr]">
+              <div class="relative min-h-[30rem] overflow-hidden lg:order-first">
+                <img src="https://unsplash.com/photos/kE0JmtbvXxM/download?force=true&w=1600" alt="Automated production machinery inside a factory" class="h-full w-full object-cover grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-[#dfff00]/15 mix-blend-color"></div>
+              </div>
+              <div class="flex flex-col justify-between p-7 md:p-12">
+                <div>
+                  <p class="eyebrow">FMCG manufacturer</p>
+                  <h3 class="mt-8 max-w-lg text-5xl font-medium leading-[0.95] tracking-[-0.055em] md:text-7xl">Packaging line monitoring</h3>
+                  <p class="mt-7 max-w-lg text-lg leading-relaxed text-black/65">Centralized IoT monitoring and a SCADA dashboard exposed downtime patterns that teams could act on.</p>
+                </div>
+                <div class="mt-12 flex items-end justify-between gap-8 border-t border-black/25 pt-7">
+                  <div><strong class="block text-6xl font-medium tracking-[-0.06em]">28%</strong><span class="mt-1 block text-sm font-bold">less unplanned downtime in 6 months</span></div>
+                  <Icon name="arrow" class="size-8" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#e7e5dd] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="mb-14 flex flex-col justify-between gap-7 md:flex-row md:items-end">
+          <h2 class="section-title max-w-5xl text-balance">Built for the realities of your industry.</h2>
+          <p class="max-w-sm text-black/60">Shared engineering discipline, adapted to each plant’s product, pace, and compliance environment.</p>
+        </div>
+
+        <div class="horizontal-accordion flex min-h-[34rem] overflow-hidden border border-black/20">
+          {industries.map(([name, detail], index) => (
+            <article class="group relative flex min-w-0 flex-col justify-between overflow-hidden border-black/20 bg-[#f1efe8] p-5 not-last:border-r focus-within:bg-[#11130f] focus-within:text-white hover:bg-[#11130f] hover:text-white" tabindex="0">
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-xs font-bold tabular-nums text-[#f3592a]">0{index + 1}</span>
+                <Icon name="plus" class="size-5 shrink-0 transition-transform duration-500 group-hover:rotate-90" />
+              </div>
+              <div class="accordion-copy">
+                <h3 class="text-3xl font-medium tracking-[-0.04em] md:text-4xl">{name}</h3>
+                <p class="mt-4 max-w-xs text-sm opacity-60">{detail}</p>
+              </div>
+              <p class="hidden origin-left text-lg font-bold [writing-mode:vertical-rl] group-hover:opacity-0 md:block">{name}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="bg-[#f1efe8] py-32 md:py-48">
+      <div class="container-shell grid gap-16 lg:grid-cols-[0.72fr_1.28fr]">
+        <div class="process-pin h-fit lg:sticky lg:top-28">
+          <p class="eyebrow mb-7 text-[#f3592a]">From first question to stable operation</p>
+          <h2 class="section-title max-w-xl">A process built to remove uncertainty.</h2>
+          <p class="mt-8 max-w-md text-lg text-black/60">One accountable engineering path, with decisions and evidence visible at every stage.</p>
+        </div>
+        <div class="border-t border-black/25">
+          {process.map(([name, detail], index) => (
+            <article class="process-item grid gap-7 border-b border-black/25 py-10 md:grid-cols-[auto_0.5fr_1fr] md:items-start md:py-14">
+              <span class="text-sm font-bold tabular-nums text-[#f3592a]">0{index + 1}</span>
+              <h3 class="text-3xl font-medium tracking-[-0.04em] md:text-4xl">{name}</h3>
+              <p class="max-w-lg text-lg leading-relaxed text-black/60">{detail}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="grain relative overflow-hidden bg-[#f3592a] py-32 md:py-48">
+      <div class="absolute -right-32 -top-32 size-[34rem] rounded-full bg-[#dfff00]/25 blur-[130px]"></div>
+      <div class="container-shell relative z-10">
+        <p class="eyebrow mb-12">More than installation</p>
+        <p class="scrub-text max-w-7xl text-4xl font-medium leading-[1.04] tracking-[-0.05em] md:text-6xl lg:text-7xl" aria-label={narrative}>
+          {narrative.split(' ').map((word) => <span class="scrub-word inline-block">{word}&nbsp;</span>)}
+        </p>
+
+        <div class="mt-24 grid gap-px bg-black/20 border border-black/20 md:grid-cols-3">
+          <div class="bg-[#f3592a] p-7 md:p-10"><p class="text-sm font-bold">System-level thinking</p><p class="mt-4 text-black/60">Mechanical, electrical, control, software, and operational realities considered together.</p></div>
+          <div class="bg-[#f3592a] p-7 md:p-10"><p class="text-sm font-bold">Evidence before claims</p><p class="mt-4 text-black/60">Acceptance criteria, measured baselines, test records, and documented performance.</p></div>
+          <div class="bg-[#f3592a] p-7 md:p-10"><p class="text-sm font-bold">Ownership beyond go-live</p><p class="mt-4 text-black/60">Training, preventive maintenance, support, and optimization for the working life of the system.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden bg-[#dfff00] py-8" aria-label="Industries and capabilities">
+      <div class="marquee-track flex w-max whitespace-nowrap text-2xl font-bold uppercase tracking-[-0.02em] md:text-4xl">
+        {[0, 1].map(() => (
+          <div class="flex shrink-0 items-center">
+            {['Automation', 'Machine Vision', 'Robotics', 'Industrial IoT', 'SCADA', 'Manufacturing Software', 'Lifecycle Support'].map((item) => (
+              <><span class="mx-6">{item}</span><span class="text-[#f3592a]">—</span></>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#f1efe8] py-32 md:py-48">
+      <div class="container-shell">
+        <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p class="eyebrow mb-7 text-[#f3592a]">What stakeholders need to know</p>
+            <h2 class="section-title max-w-xl">Confidence at every decision point.</h2>
+          </div>
+          <div class="stakeholder-carousel border-t border-black/25">
+            {[
+              ['Plant manager', 'The solution must improve output without introducing a new operational burden.', 'Measured impact, line-side usability, and dependable response after commissioning.'],
+              ['Engineering manager', 'The architecture must be sound, maintainable, and honest about constraints.', 'Clear interfaces, documented logic, disciplined testing, and accessible technical ownership.'],
+              ['Procurement manager', 'Scope, risk, accountability, and lifecycle value need to be clear.', 'Transparent deliverables, controlled changes, practical schedules, and a partner who remains accountable.'],
+            ].map(([role, quote, response], index) => (
+              <article class:list={['carousel-slide py-10 md:py-14', index !== 0 && 'hidden']} data-slide={index}>
+                <blockquote class="max-w-4xl text-3xl font-medium leading-tight tracking-[-0.04em] md:text-5xl">“{quote}”</blockquote>
+                <div class="mt-10 grid gap-6 border-t border-black/20 pt-6 sm:grid-cols-[0.5fr_1fr]">
+                  <p class="text-sm font-bold text-[#f3592a]">{role}</p>
+                  <p class="max-w-2xl text-lg text-black/60">{response}</p>
+                </div>
+              </article>
+            ))}
+            <div class="flex items-center justify-between border-t border-black/25 pt-5">
+              <p id="carousel-count" class="text-xs font-bold uppercase tracking-[0.14em]">01 / 03</p>
+              <div class="flex gap-2">
+                <button id="carousel-prev" class="grid size-12 rotate-[-135deg] place-items-center border border-black/30 transition-colors hover:bg-[#11130f] hover:text-white" aria-label="Previous perspective"><Icon name="arrow" /></button>
+                <button id="carousel-next" class="grid size-12 rotate-45 place-items-center border border-black/30 transition-colors hover:bg-[#11130f] hover:text-white" aria-label="Next perspective"><Icon name="arrow" /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+
+  <script>
+    import gsap from 'gsap';
+    import ScrollTrigger from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      const intro = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      intro
+        .from('.hero-kicker', { opacity: 0, y: 20, duration: 0.7 })
+        .from('.hero-line', { opacity: 0, y: 70, duration: 1.15 }, '-=0.35')
+        .from('.hero-actions', { opacity: 0, y: 28, duration: 0.85 }, '-=0.65')
+        .from('.hero-proof > div', { opacity: 0, y: 16, stagger: 0.08, duration: 0.55 }, '-=0.45')
+        .from('.hero-image', { opacity: 0, x: 120, scale: 0.9, duration: 1.2 }, '-=0.9');
+
+      gsap.utils.toArray<HTMLElement>('.metric-cell').forEach((cell, index) => {
+        gsap.from(cell, { y: 45, opacity: 0, duration: 0.75, delay: index * 0.06, scrollTrigger: { trigger: cell, start: 'top 88%' } });
+      });
+
+      gsap.utils.toArray<HTMLElement>('.service-card').forEach((card) => {
+        gsap.from(card, { y: 70, opacity: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: card, start: 'top 88%' } });
+      });
+
+      const motionMedia = gsap.matchMedia();
+      motionMedia.add('(min-width: 1024px)', () => {
+        const stackCards = gsap.utils.toArray<HTMLElement>('.project-stack-card');
+        stackCards.forEach((card, index) => {
+          gsap.to(card, {
+            scale: 1 - (stackCards.length - index) * 0.025,
+            opacity: index === stackCards.length - 1 ? 1 : 0.28,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 8%',
+              end: 'bottom 10%',
+              scrub: true,
+            },
+          });
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>('.process-item').forEach((item) => {
+        gsap.from(item.children, {
+          y: 35,
+          opacity: 0,
+          stagger: 0.08,
+          duration: 0.8,
+          scrollTrigger: { trigger: item, start: 'top 82%' },
+        });
+      });
+
+      gsap.to('.scrub-word', {
+        opacity: 1,
+        stagger: 0.08,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scrub-text',
+          start: 'top 78%',
+          end: 'bottom 35%',
+          scrub: true,
+        },
+      });
+
+      document.querySelectorAll<HTMLElement>('.magnetic').forEach((element) => {
+        element.addEventListener('pointermove', (event) => {
+          const rect = element.getBoundingClientRect();
+          gsap.to(element, { x: (event.clientX - rect.left - rect.width / 2) * 0.12, y: (event.clientY - rect.top - rect.height / 2) * 0.12, duration: 0.35 });
+        });
+        element.addEventListener('pointerleave', () => gsap.to(element, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.35)' }));
+      });
+    }
+
+    const slides = Array.from(document.querySelectorAll<HTMLElement>('.carousel-slide'));
+    const count = document.querySelector<HTMLElement>('#carousel-count');
+    let active = 0;
+
+    const showSlide = (next: number) => {
+      const previous = active;
+      active = (next + slides.length) % slides.length;
+      if (reduceMotion) {
+        slides[previous]?.classList.add('hidden');
+        slides[active]?.classList.remove('hidden');
+      } else {
+        gsap.to(slides[previous], { opacity: 0, y: -16, duration: 0.3, onComplete: () => {
+          slides[previous]?.classList.add('hidden');
+          slides[active]?.classList.remove('hidden');
+          gsap.fromTo(slides[active], { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' });
+        }});
+      }
+      if (count) count.textContent = `${String(active + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    };
+
+    document.querySelector('#carousel-prev')?.addEventListener('click', () => showSlide(active - 1));
+    document.querySelector('#carousel-next')?.addEventListener('click', () => showSlide(active + 1));
+  </script>
+</BaseLayout>

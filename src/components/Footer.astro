@@ -1,0 +1,38 @@
+---
+import Button from './Button.astro';
+---
+
+<footer id="consultation" class="grain overflow-hidden bg-[#11130f] text-white">
+  <div class="container-shell py-28 md:py-40">
+    <div class="grid gap-14 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div>
+        <p class="eyebrow mb-8 text-[#dfff00]">Bring us the production problem</p>
+        <h2 class="section-title max-w-5xl text-balance">Let’s engineer the path from constraint to dependable output.</h2>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+        <Button href="mailto:engineering@ici-industrial.co.id?subject=Engineering%20Consultation" variant="acid">Request engineering consultation</Button>
+        <Button href="/downloads/ici-industrial-systems-company-profile.pdf" variant="outline" icon="download">Download company profile</Button>
+      </div>
+    </div>
+
+    <div class="mt-28 grid gap-10 border-t border-white/20 pt-10 text-sm text-white/65 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <p class="mb-3 font-bold text-white">ICI Industrial Systems</p>
+        <p class="max-w-sm">Industrial automation and engineering partner for manufacturers across Indonesia.</p>
+      </div>
+      <div>
+        <p class="mb-3 font-bold text-white">Engineering office</p>
+        <p>Cikarang, West Java<br />Indonesia</p>
+      </div>
+      <div>
+        <p class="mb-3 font-bold text-white">Contact</p>
+        <a class="block hover:text-[#dfff00]" href="mailto:engineering@ici-industrial.co.id">engineering@ici-industrial.co.id</a>
+        <a class="mt-1 block hover:text-[#dfff00]" href="tel:+622189900000">+62 21 8990 0000</a>
+      </div>
+    </div>
+    <div class="mt-16 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.12em] text-white/40 sm:flex-row">
+      <p>© {new Date().getFullYear()} ICI Industrial Systems</p>
+      <p>Design · Build · Integrate · Maintain</p>
+    </div>
+  </div>
+</footer>

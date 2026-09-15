@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  href: string;
+  variant?: 'acid' | 'dark' | 'outline' | 'light';
+  icon?: 'arrow' | 'download';
+  class?: string;
+}
+
+const {
+  href,
+  variant = 'acid',
+  icon = 'arrow',
+  class: className = '',
+} = Astro.props;
+
+const variants = {
+  acid: 'bg-[#dfff00] text-[#11130f] hover:bg-white',
+  dark: 'bg-[#11130f] text-white hover:bg-[#f3592a]',
+  outline: 'border border-white/35 bg-white/5 text-white hover:bg-white hover:text-[#11130f]',
+  light: 'bg-white text-[#11130f] hover:bg-[#dfff00]',
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    'magnetic link-arrow inline-flex min-h-12 items-center justify-center gap-4 rounded-full px-6 py-3 text-sm font-bold tracking-[-0.01em]',
+    variants[variant],
+    className,
+  ]}
+>
+  <slot />
+  <Icon name={icon} class="size-4" />
+</a>
